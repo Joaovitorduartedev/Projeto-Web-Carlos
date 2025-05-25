@@ -42,7 +42,7 @@ const InterestForm = ({ artwork, isOpen, onClose }: InterestFormProps) => {
     setIsSubmitting(true);
 
     try {
-      // Inserir interesse na tabela artwork_interests
+
       const { error } = await supabase
         .from('artwork_interests')
         .insert({
