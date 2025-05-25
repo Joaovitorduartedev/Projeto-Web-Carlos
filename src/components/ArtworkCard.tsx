@@ -28,7 +28,7 @@ const ArtworkCard = ({ artwork }: ArtworkCardProps) => {
   return (
     <>
       <div className="group bg-white rounded-lg shadow-sm border border-warm-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-        {/* Imagem */}
+        {}
         <div className="relative aspect-[4/3] overflow-hidden bg-warm-gray-100">
           <img
             src={`https://images.unsplash.com/${artwork.image}?w=600&h=450&fit=crop&crop=center`}
@@ -52,7 +52,7 @@ const ArtworkCard = ({ artwork }: ArtworkCardProps) => {
           )}
         </div>
 
-        {/* Conteúdo */}
+        {}
         <div className="p-6">
           <h3 className="font-serif text-xl font-semibold text-warm-gray-900 mb-2">
             {artwork.title}
