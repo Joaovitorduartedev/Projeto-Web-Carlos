@@ -7,7 +7,7 @@ const Institucional = () => {
       <Header />
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Hero Section */}
+        {}
         <div className="text-center mb-16">
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-warm-gray-900 mb-6">
             Carlos Ventura
@@ -25,7 +25,7 @@ const Institucional = () => {
           </div>
         </div>
 
-        {/* Biografia */}
+        {}
         <section className="mb-16">
           <h2 className="font-serif text-3xl font-semibold text-warm-gray-900 mb-8">
             Biografia
@@ -54,7 +54,7 @@ const Institucional = () => {
           </div>
         </section>
 
-        {/* Formação */}
+        {}
         <section className="mb-16">
           <h2 className="font-serif text-3xl font-semibold text-warm-gray-900 mb-8">
             Formação
@@ -74,7 +74,7 @@ const Institucional = () => {
           </div>
         </section>
 
-        {/* Linha do Tempo */}
+        {}
         <section className="mb-16">
           <h2 className="font-serif text-3xl font-semibold text-warm-gray-900 mb-8">
             Marcos da Carreira
@@ -168,7 +168,7 @@ const Institucional = () => {
           </div>
         </section>
 
-        {/* Filosofia Artística */}
+        {}
         <section className="mb-16">
           <h2 className="font-serif text-3xl font-semibold text-warm-gray-900 mb-8">
             Filosofia Artística

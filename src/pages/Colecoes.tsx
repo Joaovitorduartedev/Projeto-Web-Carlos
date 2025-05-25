@@ -84,7 +84,7 @@ const Colecoes = () => {
       <Header />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Hero Section */}
+        {}
         <div className="text-center mb-16">
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-warm-gray-900 mb-6">
             Coleções Temáticas
@@ -96,7 +96,7 @@ const Colecoes = () => {
           </p>
         </div>
 
-        {/* Navegação das Coleções */}
+        {}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {Object.keys(collections).map((collectionName) => (
             <Button
@@ -114,7 +114,7 @@ const Colecoes = () => {
           ))}
         </div>
 
-        {/* Descrição da Coleção Selecionada */}
+        {}
         <div className="bg-white rounded-lg shadow-sm border border-warm-gray-200 p-8 mb-12">
           <h2 className="font-serif text-2xl font-semibold text-warm-gray-900 mb-4">
             {selectedCollection}
@@ -124,7 +124,7 @@ const Colecoes = () => {
           </p>
         </div>
 
-        {/* Obras da Coleção */}
+        {}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {collections[selectedCollection as keyof typeof collections].artworks.map((artwork, index) => (
             <div
@@ -137,7 +137,7 @@ const Colecoes = () => {
           ))}
         </div>
 
-        {/* Estatísticas da Coleção */}
+        {}
         <div className="mt-16 bg-gradient-to-r from-art-secondary to-art-accent rounded-lg p-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
             <div>

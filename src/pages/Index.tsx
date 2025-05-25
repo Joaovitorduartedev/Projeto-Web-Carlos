@@ -117,7 +117,7 @@ const Index = () => {
     <div className="min-h-screen bg-warm-gray-50">
       <Header />
       
-      {/* Hero Section */}
+      {}
       <section className="bg-gradient-to-r from-art-secondary to-art-accent py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-warm-gray-900 mb-4 animate-fade-in">
@@ -133,7 +133,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Galeria */}
+      {}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-3xl font-bold text-warm-gray-900 mb-8 text-center">
@@ -174,7 +174,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
+      {}
       <footer className="bg-warm-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h3 className="font-serif text-2xl font-semibold mb-4">Carlos Ventura</h3>

@@ -77,7 +77,7 @@ const Portfolio = () => {
       <Header />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Hero Section */}
+        {}
         <div className="text-center mb-16">
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-warm-gray-900 mb-6">
             Portfólio de Obras Vendidas
@@ -88,7 +88,7 @@ const Portfolio = () => {
             pelo Brasil e além.
           </p>
 
-          {/* Estatísticas */}
+          {}
           <div className="flex justify-center">
             <div className="bg-white rounded-lg shadow-sm border border-warm-gray-200 p-6">
               <h3 className="font-serif text-3xl font-bold text-art-primary mb-2">
@@ -101,7 +101,7 @@ const Portfolio = () => {
           </div>
         </div>
 
-        {/* Aviso sobre obras vendidas */}
+        {}
         <div className="bg-gradient-to-r from-art-secondary to-art-accent rounded-lg p-8 mb-12">
           <div className="text-center">
             <h2 className="font-serif text-2xl font-semibold text-warm-gray-900 mb-4">
@@ -115,7 +115,7 @@ const Portfolio = () => {
           </div>
         </div>
 
-        {/* Grid de Obras Vendidas */}
+        {}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {soldArtworks.map((artwork, index) => (
             <div
@@ -128,7 +128,7 @@ const Portfolio = () => {
           ))}
         </div>
 
-        {/* Seção de Contato para Colecionadores */}
+        {}
         <div className="bg-white rounded-lg shadow-sm border border-warm-gray-200 p-8">
           <div className="text-center">
             <h2 className="font-serif text-2xl font-semibold text-warm-gray-900 mb-4">
