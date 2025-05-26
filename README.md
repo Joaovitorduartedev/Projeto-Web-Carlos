@@ -1,73 +1,27 @@
-# Welcome to your Lovable project
+# Projeto: Carlos Ventura - Galeria de Arte Online 🎨
 
-## Project info
+Este projeto, desenvolvido por **Lucas de Oliveira, Bruno Moraes, Eduardo Evelin, Mateus Farias, João Vitor Duarte e Sávio José**, transporta a arte de Carlos Ventura para o mundo digital. Ele atende à necessidade do artista de ter uma presença online mais forte [cite: 3] e um processo mais ágil para expor e vender suas obras de arte únicas e feitas à mão[cite: 4, 5].
 
-**URL**: https://lovable.dev/projects/99347835-cf2d-4698-bdf7-19e9053e2cdc
+## 🌟 Visão Geral do Projeto
 
-## How can I edit this code?
+Carlos Ventura, artista plástico há mais de 20 anos com quadros vendidos no Brasil e no exterior[cite: 2], percebeu que estava ficando invisível online[cite: 3]. O método anterior de vender arte através de mensagens no Instagram era ineficiente tanto para o artista quanto para os potenciais compradores, desanimando as pessoas e desgastando o artista[cite: 4]. Este projeto entrega uma galeria online dedicada e funcional[cite: 5], projetada para ser elegante e uma verdadeira representação de sua arte[cite: 10].
 
-There are several ways of editing your application.
+O website funciona como uma extensão digital do ateliê de Carlos, permitindo que os visitantes explorem, conectem-se com suas obras e as adquiram com facilidade[cite: 5, 10].
 
-**Use Lovable**
+### Principais Funcionalidades Desenvolvidas:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/99347835-cf2d-4698-bdf7-19e9053e2cdc) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/99347835-cf2d-4698-bdf7-19e9053e2cdc) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+* **🖼️ Galeria Online:** Os visitantes podem visualizar as obras com informações detalhadas[cite: 5], incluindo:
+    * Nome, fotografia de alta qualidade, descrição detalhando a história por trás da peça, técnica utilizada (óleo, acrílico, aquarela), dimensões, ano de criação e preço[cite: 5].
+* **🛒 Sistema de Aquisição:**
+    * Um botão "Adquirir obra" permite que os usuários manifestem interesse diretamente pelo site[cite: 6].
+    * Isso leva a uma tela de confirmação de interesse com um formulário (nome, e-mail, telefone)[cite: 6].
+    * O sistema salva esses dados, permitindo que Carlos gerencie os interessados de forma eficaz[cite: 6].
+* **👨‍🎨 Jornada do Artista:**
+    * Uma página institucional apresenta a carreira de Carlos Ventura, incluindo prêmios, exposições e marcos significativos, potencialmente com fotos e uma linha do tempo[cite: 7].
+* **📚 Coleções Temáticas e Portfólio:**
+    * As obras de arte são organizadas em coleções temáticas (ex: "Sertão e Silêncio", "Paisagens Urbanas")[cite: 8].
+    * Os usuários podem filtrar as peças por técnica, ano ou faixa de preço para uma experiência de navegação personalizada[cite: 8].
+    * Uma seção dedicada exibe obras que já foram vendidas, marcadas como "Vendido", servindo como um portfólio de criações passadas[cite: 9].
+* **✨ Experiência do Usuário:**
+    * O site foi projetado para ser responsivo, garantindo uma experiência fluida em diversos dispositivos[cite: 10].
+    * Busca um design esteticamente agradável e leve, que transmita elegância e confiança, permitindo que as pessoas naveguem, se emocionem com a arte e realizem compras[cite: 10].
