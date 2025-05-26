@@ -25,3 +25,17 @@ O website funciona como uma extensão digital do ateliê de Carlos, permitindo q
 * **✨ Experiência do Usuário:**
     * O site foi projetado para ser responsivo, garantindo uma experiência fluida em diversos dispositivos.
     * Busca um design esteticamente agradável e leve, que transmita elegância e confiança, permitindo que as pessoas naveguem, se emocionem com a arte e realizem compras.
+
+---
+
+## 🚀 Como Rodar o Projeto Localmente
+
+Siga os passos abaixo para executar o projeto localmente na sua máquina. Certifique-se de ter o **Node.js** instalado.
+
+### 1. Clone o repositório
+
+```bash
+git clone https://github.com/seu-usuario/nome-do-repositorio.git
+cd nome-do-repositorio
+npm i
+npm run dev
