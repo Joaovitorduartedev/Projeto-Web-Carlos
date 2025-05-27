@@ -32,7 +32,7 @@ O website funciona como uma extensão digital do ateliê de Carlos, permitindo q
 
 Siga os passos abaixo para executar o projeto localmente na sua máquina. Certifique-se de ter o **Node.js** instalado.
 
-### 1. Clone o repositório
+### 1. Clone o repositório.
 
 ```bash
 git clone https://github.com/seu-usuario/nome-do-repositorio.git
