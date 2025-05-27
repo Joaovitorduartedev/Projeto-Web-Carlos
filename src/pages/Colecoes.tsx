@@ -3,88 +3,40 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import ArtworkCard from "@/components/ArtworkCard";
 import { Button } from "@/components/ui/button";
-
-const collections = {
-  "Sertão e Silêncio": {
-    description: "Uma jornada contemplativa pelas vastas extensões do sertão piauiense, onde o silêncio fala mais alto que palavras. Esta coleção captura a essência da terra natal do artista, celebrando a beleza austera e poética do cerrado.",
-    artworks: [
-      {
-        id: 1,
-        title: "Silêncio do Sertão",
-        image: "photo-1470071459604-3b5ec3a7fe05",
-        technique: "Óleo sobre tela",
-        dimensions: "80cm x 60cm",
-        year: 2024,
-        description: "Uma reflexão poética sobre a vastidão e tranquilidade do sertão piauiense.",
-        price: "R$ 3.500,00",
-        collection: "Sertão e Silêncio"
-      },
-      {
-        id: 3,
-        title: "Memórias do Rio",
-        image: "photo-1504893524553-b855bce32c67",
-        technique: "Aquarela",
-        dimensions: "50cm x 40cm",
-        year: 2023,
-        description: "Inspirada nas margens do Rio Parnaíba, celebrando os recursos hídricos piauienses.",
-        price: "R$ 1.800,00",
-        collection: "Sertão e Silêncio"
-      },
-      {
-        id: 6,
-        title: "Luz da Tarde",
-        image: "photo-1500673922987-e212871fec22",
-        technique: "Óleo sobre tela",
-        dimensions: "70cm x 50cm",
-        year: 2022,
-        description: "A magia da luz dourada do fim de tarde no cerrado piauiense.",
-        price: "R$ 3.200,00",
-        collection: "Sertão e Silêncio"
-      }
-    ]
-  },
-  "Paisagens Urbanas": {
-    description: "Um diálogo visual entre tradição e modernidade, explorando como as cidades brasileiras conservam suas raízes enquanto abraçam o futuro. Cada obra desta coleção é um estudo sobre identidade cultural urbana.",
-    artworks: [
-      {
-        id: 2,
-        title: "Amanhecer Urbano",
-        image: "photo-1488972685288-c3fd157d7c7a",
-        technique: "Acrílico sobre tela",
-        dimensions: "100cm x 70cm",
-        year: 2024,
-        description: "A dualidade entre o moderno e o tradicional nas cidades brasileiras.",
-        price: "R$ 4.200,00",
-        collection: "Paisagens Urbanas"
-      },
-      {
-        id: 5,
-        title: "Geometria do Concreto",
-        image: "photo-1449157291145-7efd050a4d0e",
-        technique: "Técnica mista",
-        dimensions: "90cm x 90cm",
-        year: 2024,
-        description: "Investigação sobre formas arquitetônicas modernas e o espaço urbano.",
-        price: "R$ 5.500,00",
-        collection: "Paisagens Urbanas"
-      }
-    ]
-  },
-  "Retratos": {
-    description: "Estudos profundos sobre a alma humana, especialmente celebrando a força e beleza do povo nordestino. Cada retrato conta uma história única, capturando não apenas a aparência, mas a essência de cada pessoa.",
-    artworks: []
-  }
-};
+import { useCollections } from "@/hooks/useCollections";
+import { useArtworks } from "@/hooks/useArtworks";
 
 const Colecoes = () => {
-  const [selectedCollection, setSelectedCollection] = useState("Sertão e Silêncio");
+  const { data: collections = [], isLoading: collectionsLoading } = useCollections();
+  const { data: artworks = [], isLoading: artworksLoading } = useArtworks();
+  const [selectedCollection, setSelectedCollection] = useState("");
+
+  
+  if (!selectedCollection && collections.length > 0) {
+    setSelectedCollection(collections[0].name);
+  }
+
+  const selectedCollectionData = collections.find(c => c.name === selectedCollection);
+  const collectionArtworks = artworks.filter(artwork => 
+    artwork.collections?.name === selectedCollection
+  );
+
+  if (collectionsLoading || artworksLoading) {
+    return (
+      <div className="min-h-screen bg-warm-gray-50">
+        <Header />
+        <div className="flex items-center justify-center py-16">
+          <p className="text-lg text-warm-gray-600">Carregando coleções...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-warm-gray-50">
       <Header />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {}
         <div className="text-center mb-16">
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-warm-gray-900 mb-6">
             Coleções Temáticas
@@ -96,68 +48,85 @@ const Colecoes = () => {
           </p>
         </div>
 
-        {}
+      
         <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {Object.keys(collections).map((collectionName) => (
+          {collections.map((collection) => (
             <Button
-              key={collectionName}
-              variant={selectedCollection === collectionName ? "default" : "outline"}
-              onClick={() => setSelectedCollection(collectionName)}
+              key={collection.id}
+              variant={selectedCollection === collection.name ? "default" : "outline"}
+              onClick={() => setSelectedCollection(collection.name)}
               className={`px-6 py-3 text-lg ${
-                selectedCollection === collectionName
+                selectedCollection === collection.name
                   ? "bg-art-primary hover:bg-art-primary/90 text-white"
                   : "text-warm-gray-700 border-warm-gray-300 hover:bg-warm-gray-100"
               }`}
             >
-              {collectionName}
+              {collection.name}
             </Button>
           ))}
         </div>
 
-        {}
-        <div className="bg-white rounded-lg shadow-sm border border-warm-gray-200 p-8 mb-12">
-          <h2 className="font-serif text-2xl font-semibold text-warm-gray-900 mb-4">
-            {selectedCollection}
-          </h2>
-          <p className="text-warm-gray-700 text-lg leading-relaxed">
-            {collections[selectedCollection as keyof typeof collections].description}
-          </p>
-        </div>
-
-        {}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {collections[selectedCollection as keyof typeof collections].artworks.map((artwork, index) => (
-            <div
-              key={artwork.id}
-              className="animate-fade-in"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <ArtworkCard artwork={artwork} />
-            </div>
-          ))}
-        </div>
-
-        {}
-        <div className="mt-16 bg-gradient-to-r from-art-secondary to-art-accent rounded-lg p-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
-            <div>
-              <h3 className="font-serif text-3xl font-bold text-warm-gray-900 mb-2">
-                {collections[selectedCollection as keyof typeof collections].artworks.length}
-              </h3>
-              <p className="text-warm-gray-700 font-medium">
-                Obras na Coleção
+        {selectedCollectionData && (
+          <>
+           
+            <div className="bg-white rounded-lg shadow-sm border border-warm-gray-200 p-8 mb-12">
+              <h2 className="font-serif text-2xl font-semibold text-warm-gray-900 mb-4">
+                {selectedCollectionData.name}
+              </h2>
+              <p className="text-warm-gray-700 text-lg leading-relaxed">
+                {selectedCollectionData.description}
               </p>
             </div>
-            <div>
-              <h3 className="font-serif text-3xl font-bold text-warm-gray-900 mb-2">
-                {collections[selectedCollection as keyof typeof collections].artworks.length}
-              </h3>
-              <p className="text-warm-gray-700 font-medium">
-                Disponíveis
-              </p>
+
+           
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {collectionArtworks.map((artwork, index) => (
+                <div
+                  key={artwork.id}
+                  className="animate-fade-in"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <ArtworkCard 
+                    artwork={{
+                      id: artwork.id,
+                      title: artwork.title,
+                      image: artwork.image_url,
+                      technique: artwork.technique,
+                      dimensions: artwork.dimensions,
+                      year: artwork.year,
+                      description: artwork.description,
+                      price: artwork.price,
+                      sold: artwork.sold,
+                      collection: artwork.collections?.name
+                    }} 
+                  />
+                </div>
+              ))}
             </div>
-          </div>
-        </div>
+
+            
+            <div className="mt-16 bg-gradient-to-r from-art-secondary to-art-accent rounded-lg p-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+                <div>
+                  <h3 className="font-serif text-3xl font-bold text-warm-gray-900 mb-2">
+                    {collectionArtworks.length}
+                  </h3>
+                  <p className="text-warm-gray-700 font-medium">
+                    Obras na Coleção
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-serif text-3xl font-bold text-warm-gray-900 mb-2">
+                    {collectionArtworks.filter(a => !a.sold).length}
+                  </h3>
+                  <p className="text-warm-gray-700 font-medium">
+                    Disponíveis
+                  </p>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

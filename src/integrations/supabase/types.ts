@@ -51,6 +51,83 @@ export type Database = {
         }
         Relationships: []
       }
+      artworks: {
+        Row: {
+          collection_id: string | null
+          created_at: string
+          description: string
+          dimensions: string
+          id: number
+          image_url: string
+          price: string
+          sold: boolean | null
+          technique: string
+          title: string
+          updated_at: string
+          year: number
+        }
+        Insert: {
+          collection_id?: string | null
+          created_at?: string
+          description: string
+          dimensions: string
+          id?: number
+          image_url: string
+          price: string
+          sold?: boolean | null
+          technique: string
+          title: string
+          updated_at?: string
+          year: number
+        }
+        Update: {
+          collection_id?: string | null
+          created_at?: string
+          description?: string
+          dimensions?: string
+          id?: number
+          image_url?: string
+          price?: string
+          sold?: boolean | null
+          technique?: string
+          title?: string
+          updated_at?: string
+          year?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "artworks_collection_id_fkey"
+            columns: ["collection_id"]
+            isOneToOne: false
+            referencedRelation: "collections"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      collections: {
+        Row: {
+          created_at: string
+          description: string
+          id: string
+          name: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description: string
+          id?: string
+          name: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string
+          id?: string
+          name?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
